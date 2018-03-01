@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Creative Project 2</title>
+    <link rel="stylesheet" href="/styles.css">
+    <meta name="viewport" content="width=device-width" />
+  </head>
+  <body>
+    <div id="app">
+    
+      <div class="clickable">
+        <h1><a href="index.html">Joke Generator</a><img width="15%" src="smiley.png"></h1>
+      </div>
+
+      <div class="joke">
+        <input v-if="firstJoke" v-on:click="fetchJoke" id="jokeButton" type="button" value="Get a Joke!"></input>
+        <input v-else v-on:click="fetchJoke" id="jokeButton" type="button" value="Get a New Joke!"></input>
+        <p id = "jokeResult" class="jokeResult">{{setup}}</p>
+
+        <div v-if="showPLButton" >
+          <input v-on:click="revealPunchline" type="button" value="Show Punchline"></input>
+        </div>
+
+        <div v-if="showPunchline" class ="punchline" id="punchline">
+          {{punchline}}
+        </div>
+      </div>
+
+     
+      <div class="footer">
+        <a href=" https://github.com/breanna-lambert/cp3">GitHub Repository</a>
+      </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/vue@2.5.13/dist/vue.js"></script>
+    <script src="/script.js"></script>
+
+  </body>
+</html>
